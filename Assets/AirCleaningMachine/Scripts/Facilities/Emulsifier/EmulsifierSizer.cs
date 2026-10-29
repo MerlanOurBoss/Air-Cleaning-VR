@@ -16,6 +16,10 @@ public class EmulsifierSizer : MonoBehaviour
     [SerializeField] private float resizeTime = 0.8f;
 
     private Vector3 _baseScale;
+    private Vector3 _basePosition;
+    // Высота низа модели над опорной точкой объекта: точка лежит ниже пола,
+    // и без поправки при росте установка поднималась бы над полом.
+    private float _bottomOffset;
     private DropSpawner[] _spawners;
     private float[] _baseGravity;
     private float _factor = 1f;
@@ -25,6 +29,12 @@ public class EmulsifierSizer : MonoBehaviour
     private void Awake()
     {
         _baseScale = transform.localScale;
+        _basePosition = transform.localPosition;
+
+        float bottom = float.PositiveInfinity;
+        foreach (var r in GetComponentsInChildren<MeshRenderer>())
+            if (r.enabled) bottom = Mathf.Min(bottom, r.bounds.min.y);
+        _bottomOffset = float.IsInfinity(bottom) ? 0f : bottom - transform.position.y;
 
         // Гравитация капель привязана к масштабу, чтобы темп падения не менялся.
         _spawners = GetComponentsInChildren<DropSpawner>(true);
@@ -69,6 +79,7 @@ public class EmulsifierSizer : MonoBehaviour
     private void Apply()
     {
         transform.localScale = _baseScale * _factor;
+        transform.localPosition = _basePosition - Vector3.up * (_bottomOffset * (_factor - 1f));
         for (int i = 0; i < _spawners.Length; i++) _spawners[i].dropGravityScale = _baseGravity[i] * _factor;
     }
 }
