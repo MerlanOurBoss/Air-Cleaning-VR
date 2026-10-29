@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - Emul2
+  - Facilities_Emul
+  - ConnectionPointOUT
+  - Emul
+  - ComponentsCamera
+  - ConnectionPointIN
+  - TriggerForEmul
   layers:
   - Default
   - TransparentFX
@@ -14,7 +21,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - PlayerBlocker
   - 
   - 
   - 
@@ -51,3 +58,4 @@ TagManager:
   - Light Layer 5
   - Light Layer 6
   - Light Layer 7
+  m_MigratedRenderPipelines: []
