@@ -13,6 +13,8 @@ public class EmulsifierSettings : MonoBehaviour
 
     public const int MinPumpLevel = 1;
     public const int MaxPumpLevel = 4;
+    // Уровень 1 при начальном расходе жидкости 0,1 м³/с — неправильная настройка (см. EmulsifierFaultRules).
+    public const int DefaultPumpLevel = 2;
 
     // Меши струй Alembic создаёт сам при загрузке потока, поэтому в префабе на них нет ссылок —
     // берём их из-под каждого директора, когда появятся.
@@ -31,7 +33,7 @@ public class EmulsifierSettings : MonoBehaviour
 
     private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
 
-    public int PumpLevel { get; private set; } = MinPumpLevel;
+    public int PumpLevel { get; private set; } = DefaultPumpLevel;
     public FluidType Fluid { get; private set; } = FluidType.Water;
 
     public event Action Changed;
