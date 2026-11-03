@@ -24,13 +24,13 @@ public class EmulsifierFaultRules : MonoBehaviour
     // Проверяются сверху вниз, срабатывает первое нарушенное правило.
     private static readonly Rule[] Rules =
     {
-        new Rule(EmulsifierFault.FaultType.Clog, "Сода при 5 °C: кристаллизация, засор",
+        new Rule(EmulsifierFault.FaultType.Clog, "rule.sodaCold",
             (s, c) => s.Fluid == EmulsifierSettings.FluidType.Soda && c.Temperature <= 5f),
-        new Rule(EmulsifierFault.FaultType.Clog, "Газ 14 м³/с при жидкости 0,01 м³/с: мало орошения, отложения",
+        new Rule(EmulsifierFault.FaultType.Clog, "rule.lowIrrigation",
             (s, c) => c.GasFlow >= 14f && c.WaterFlow <= 0.01f),
-        new Rule(EmulsifierFault.FaultType.LowLevel, "Насос 1 при жидкости 0,1 м³/с: насос не успевает подавать",
+        new Rule(EmulsifierFault.FaultType.LowLevel, "rule.pumpSlow",
             (s, c) => s.PumpLevel <= 1 && c.WaterFlow >= 0.1f),
-        new Rule(EmulsifierFault.FaultType.LowLevel, "Насос 1 при газе установки от 400 000 м³/ч: слабый насос",
+        new Rule(EmulsifierFault.FaultType.LowLevel, "rule.pumpWeak",
             (s, c) => s.PumpLevel <= 1 && c.MainGasFlow >= 400000f),
     };
 

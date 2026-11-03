@@ -1,0 +1,713 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: acd493fe0f259f843b3d6d389b220933, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 2382966784
+    m_Localized: Emulsifier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2416521216
+    m_Localized: Control
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2416521217
+    m_Localized: Calculation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2416521218
+    m_Localized: Faults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715520
+    m_Localized: Training
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715521
+    m_Localized: Exam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715522
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715523
+    m_Localized: Mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715524
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715525
+    m_Localized: Operation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715526
+    m_Localized: Pump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715527
+    m_Localized: Liquid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715528
+    m_Localized: Casing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715529
+    m_Localized: Water
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715530
+    m_Localized: Caustic soda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715531
+    m_Localized: Soda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715532
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715533
+    m_Localized: Stop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715534
+    m_Localized: Make transparent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715535
+    m_Localized: Restore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715536
+    m_Localized: Running
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715537
+    m_Localized: Stopped
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715538
+    m_Localized: "{0}  \xB7  pump {1}  \xB7  {2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715539
+    m_Localized: "  \xB7  cleaning {0} %"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715540
+    m_Localized: "  \xB7  breaker locked"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715541
+    m_Localized: "Plant gas, m\xB3/h"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715542
+    m_Localized: "Gas flow, m\xB3/s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715543
+    m_Localized: "Liquid flow, m\xB3/s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715544
+    m_Localized: "Temperature, \xB0C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715545
+    m_Localized: Pavlodar CHP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715546
+    m_Localized: Almaty CHP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715547
+    m_Localized: Gas velocity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715548
+    m_Localized: Water velocity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715549
+    m_Localized: Gas mass flow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715550
+    m_Localized: Liquid mass flow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715551
+    m_Localized: Mass transfer coef.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715552
+    m_Localized: Liquid consumption
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715553
+    m_Localized: Vessel diameter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715554
+    m_Localized: Vessel height
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715555
+    m_Localized: Consumables
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715556
+    m_Localized: '{0} m/s'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715557
+    m_Localized: "{0} m\xB3/s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715558
+    m_Localized: "{0} m\xB3/h"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715559
+    m_Localized: '{0} m'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715560
+    m_Localized: '{0} KZT'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715561
+    m_Localized: kPa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715562
+    m_Localized: Practice fault
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715563
+    m_Localized: Equipment failure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715564
+    m_Localized: Random
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715565
+    m_Localized: Clog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715566
+    m_Localized: Level drop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715567
+    m_Localized: Pump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715568
+    m_Localized: Exhaust fan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715569
+    m_Localized: Pressure gauge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715570
+    m_Localized: Fix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715571
+    m_Localized: Clean
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715572
+    m_Localized: Refill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715573
+    m_Localized: Repair pump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715574
+    m_Localized: Repair fan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715575
+    m_Localized: Replace gauge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715576
+    m_Localized: Plant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715577
+    m_Localized: Restore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715578
+    m_Localized: 'Rules: on'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715579
+    m_Localized: 'Rules: off'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715580
+    m_Localized: "Pressure sensor {0} kPa  \xB7  Level {1} %  \xB7  PPE {2} of {3}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715581
+    m_Localized: '<color=#FF5A4A>ALARM: high pressure</color>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715582
+    m_Localized: '<color=#FF5A4A>ALARM: low level</color>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715583
+    m_Localized: '<color=#FF5A4A>EXPLOSION. Cause: {0}.</color>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715584
+    m_Localized: clog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715585
+    m_Localized: low level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715586
+    m_Localized: pump failure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715587
+    m_Localized: exhaust fan failure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715588
+    m_Localized: faulty pressure gauge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715589
+    m_Localized: A fault will occur within a minute. Watch the instruments.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715590
+    m_Localized: 'Practice fault: {0}.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715591
+    m_Localized: The plant is restored. Start it on the Control page.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715592
+    m_Localized: There is no such fault.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715593
+    m_Localized: Stop the plant first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715594
+    m_Localized: Lock the breaker at the control post first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715595
+    m_Localized: Put on the PPE from the stand first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715596
+    m_Localized: The fault is fixed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715597
+    m_Localized: Remove the lock and start the plant.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715598
+    m_Localized: Refilling.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715599
+    m_Localized: Correct the setting. {0}.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715600
+    m_Localized: "Soda at 5 \xB0C: crystallisation, clog"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715601
+    m_Localized: "Gas 14 m\xB3/s with liquid 0.01 m\xB3/s: too little irrigation, deposits"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715602
+    m_Localized: "Pump 1 with liquid 0.1 m\xB3/s: the pump cannot keep up"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715603
+    m_Localized: "Pump 1 with plant gas from 400,000 m\xB3/h: the pump is too weak"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715604
+    m_Localized: Press to learn more
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715605
+    m_Localized: Press to put on
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715606
+    m_Localized: Worn. Press to take off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715607
+    m_Localized: Press to lock the breaker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715608
+    m_Localized: Locked. Press to remove the lock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715609
+    m_Localized: Stop the plant first
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715610
+    m_Localized: Gas inlet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715611
+    m_Localized: Contaminated gas enters here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715612
+    m_Localized: Pump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715613
+    m_Localized: Feeds liquid from the tank to the column nozzles. Power is set by a level from 1 to 4.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715614
+    m_Localized: Gas outlet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715615
+    m_Localized: Cleaned gas leaves here for the exhaust fan and the stack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715616
+    m_Localized: Pressure gauge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715617
+    m_Localized: Pressure in the column. Normal is 2.5 kPa, the red zone starts at 6 kPa, and at 10 kPa the column bursts.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715618
+    m_Localized: Emulsifier column
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715619
+    m_Localized: The main vessel. Gas rises from the bottom and mixes with the liquid, and contaminants pass into it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715620
+    m_Localized: Level gauge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715621
+    m_Localized: Liquid level. At the lower red mark, water stops reaching the column.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715622
+    m_Localized: Exhaust fan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715623
+    m_Localized: 'Creates draught: it pulls gas through the whole plant and sends it to the stack.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715624
+    m_Localized: Tank
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715625
+    m_Localized: The supply of liquid that the pump feeds to the column.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715626
+    m_Localized: Hard hat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715627
+    m_Localized: Safety goggles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715628
+    m_Localized: Respirator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715629
+    m_Localized: Gloves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715630
+    m_Localized: 'PPE: put on before entering'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715631
+    m_Localized: 'DANGER ZONE
+
+      Enter only with PPE'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715632
+    m_Localized: Breaker lock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715633
+    m_Localized: 'LOCK
+
+      off'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715634
+    m_Localized: 'LOCK
+
+      on'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715635
+    m_Localized: ON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715636
+    m_Localized: OFF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715637
+    m_Localized: '<b>Training</b>: step-by-step prompts and practice faults.
+
+      <b>Exam</b>: no prompts, a fault starts without warning, and you get a score at the end.
+
+      Both modes reset the plant settings and remove your PPE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715638
+    m_Localized: A scenario is running. The task is shown above the tablet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715639
+    m_Localized: Step {0} of {1}.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715640
+    m_Localized: <color=#6FDC8C>Done</color>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715641
+    m_Localized: 'Point the ray at any part of the plant: a frame appears. Press the trigger to open its description.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715642
+    m_Localized: Go to the PPE stand. Grab the hard hat, goggles and respirator and bring them to your head and face. Put the gloves on with the ray and trigger.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715643
+    m_Localized: 'Control tab: choose the liquid Soda.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715644
+    m_Localized: On the same tab, set the pump to level 3.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715645
+    m_Localized: "Go to the manual control post and use the valve to set the liquid flow to 0.10 m\xB3/s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715646
+    m_Localized: Start the plant with the breaker at the post.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715647
+    m_Localized: 'Look at the smoke: it gets lighter at the column outlet. The plant must run with at least {0} % cleaning.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715648
+    m_Localized: 'Practice fault. Watch the pressure gauge: the pressure is rising. Wait for the alarm.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715649
+    m_Localized: 'Pressure is above normal: this is a clog. Stop the plant and lock the breaker with the red lock at the post.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715650
+    m_Localized: 'Faults tab: press Clean.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715651
+    m_Localized: Remove the lock and start the plant again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715652
+    m_Localized: 'A new fault. Watch the level gauge: the level is dropping. Wait for the alarm.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715653
+    m_Localized: 'The level is below minimum. Faults tab: press Refill.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715654
+    m_Localized: Refilling. Wait until it is normal; if the plant is stopped, start it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715655
+    m_Localized: 'Pump failure: the jets in the column are gone, the pump sound has stopped, and pressure is rising. Stop the plant and lock the breaker.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715656
+    m_Localized: 'Faults tab: press Repair pump.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715657
+    m_Localized: 'Exhaust fan failure: the smoke is gone, the fan hum has stopped, and pressure is rising. Stop the plant and lock the breaker.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715658
+    m_Localized: 'Faults tab: press Repair fan.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715659
+    m_Localized: The gauge shows a rise, but there is no siren and the sensor on the Faults tab is normal. The instrument is faulty. Stop the plant and lock the breaker.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715660
+    m_Localized: 'Faults tab: press Replace gauge.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715661
+    m_Localized: 'Exam: follow the safety procedure, start the plant with at least {0} % cleaning, and watch the instruments.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715662
+    m_Localized: '<b>Training complete.</b>
+
+      You can now take the exam: there are no prompts, and a fault starts without warning.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715663
+    m_Localized: '<color=#FF5A4A><b>Explosion.</b></color> Pressure reached the burst point while the plant was running.
+
+      Start the training again: stop the plant as soon as the alarm sounds.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715664
+    m_Localized: '<color=#6FDC8C><b>Pass: {0} of 100</b></color>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715665
+    m_Localized: '<color=#FF5A4A><b>Fail: {0} of 100</b></color>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715666
+    m_Localized: 'Explosion: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715667
+    m_Localized: 'Not fixed in time: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715668
+    m_Localized: 'Reached normal operation: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715669
+    m_Localized: not achieved
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715670
+    m_Localized: 'Fault "{0}": reaction {1}, fixed in {2}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715671
+    m_Localized: "{0}: \u2212{1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715672
+    m_Localized: '{0} s'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715673
+    m_Localized: '{0} min {1} s'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715674
+    m_Localized: Wrong setting. {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715675
+    m_Localized: Slow reaction to a fault
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715676
+    m_Localized: Late reaction to a fault
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715677
+    m_Localized: Entered the danger zone without PPE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715678
+    m_Localized: Started the plant without PPE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715679
+    m_Localized: Tried to fix a fault that did not exist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715680
+    m_Localized: Servicing a running plant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715681
+    m_Localized: Servicing without locking the breaker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715682
+    m_Localized: Servicing without PPE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16855863996416
+    m_Localized: Grab it and bring it to your head
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16855893356544
+    m_Localized: Grab it and bring it to your face
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

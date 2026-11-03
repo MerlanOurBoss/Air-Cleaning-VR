@@ -83,7 +83,7 @@ public class EmulsifierGasCleaning : MonoBehaviour
         float ratio = calculation.WaterFlow / Mathf.Max(calculation.GasFlow, 0.01f) * 1000f;
         float ratioFactor = Mathf.Lerp(poorRatioFactor, 1f, Mathf.InverseLerp(poorRatio, goodRatio, ratio));
 
-        return liquid * ratioFactor * PumpFactor[settings.PumpLevel - 1] * fault.WaterShare;
+        return liquid * ratioFactor * PumpFactor[settings.PumpLevel - 1] * fault.WaterShare * fault.GasShare;
     }
 
     private void Apply()

@@ -10,26 +10,42 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 /// повторное нажатие на этот же узел скрывает его, нажатие на другой — переключает.
 /// Коллайдер узла лежит на слое Inspectable, который ни с чем не сталкивается и виден только лучам.
 /// </summary>
-[RequireComponent(typeof(XRSimpleInteractable), typeof(BoxCollider))]
+[RequireComponent(typeof(BoxCollider))]
 public class InspectableNode : MonoBehaviour
 {
     private const float FrameWidth = 0.012f;
 
+    [Tooltip("Ключ названия в таблице локализации.")]
     [SerializeField] private string title;
-    [SerializeField, TextArea] private string description;
+    [Tooltip("Ключ описания в таблице локализации.")]
+    [SerializeField] private string description;
+    [Tooltip("Ключ подсказки под названием.")]
+    [SerializeField] private string hint = "card.hint";
+    [Tooltip("Нажатие выполняет действие (событие Pressed), а не открывает описание.")]
+    [SerializeField] private bool actionOnly;
 
-    public string Title => title;
-    public string Description => description;
+    public string Title => L10n.Get(title);
+    public string Description => L10n.Get(description);
+    public string Hint => L10n.Get(hint);
+
+    public event System.Action Pressed;
+
+    public void SetHint(string key)
+    {
+        hint = key;
+        if (_card != null) _card.Invalidate();
+    }
+
     public Bounds Bounds => _collider.bounds;
 
-    private XRSimpleInteractable _interactable;
+    private XRBaseInteractable _interactable;
     private BoxCollider _collider;
     private NodeLabelCard _card;
     private LineRenderer _frame;
 
     private void Awake()
     {
-        _interactable = GetComponent<XRSimpleInteractable>();
+        _interactable = GetComponent<XRBaseInteractable>();
         _collider = GetComponent<BoxCollider>();
     }
 
@@ -43,18 +59,20 @@ public class InspectableNode : MonoBehaviour
     {
         _interactable.hoverEntered.AddListener(OnHoverEntered);
         _interactable.hoverExited.AddListener(OnHoverExited);
+        _interactable.selectEntered.AddListener(OnSelectEntered);
     }
 
     private void OnDisable()
     {
         _interactable.hoverEntered.RemoveListener(OnHoverEntered);
         _interactable.hoverExited.RemoveListener(OnHoverExited);
+        _interactable.selectEntered.RemoveListener(OnSelectEntered);
     }
 
     private void OnHoverEntered(HoverEnterEventArgs args)
     {
         // До Start луч ещё не мог навестись осознанно: первый кадр сцены пропускаем.
-        if (_frame == null) return;
+        if (_frame == null || _interactable.isSelected) return;
         _frame.enabled = true;
         _card.HoverEnter(this);
     }
@@ -62,6 +80,14 @@ public class InspectableNode : MonoBehaviour
     private void OnHoverExited(HoverExitEventArgs args)
     {
         if (_frame == null || _interactable.isHovered) return;
+        _frame.enabled = false;
+        _card.HoverExit(this);
+    }
+
+    // Предмет взяли в руку: рамка и подсказка у него перед глазами только мешают.
+    private void OnSelectEntered(SelectEnterEventArgs args)
+    {
+        if (_frame == null || !actionOnly) return;
         _frame.enabled = false;
         _card.HoverExit(this);
     }
@@ -74,7 +100,8 @@ public class InspectableNode : MonoBehaviour
             if (hovering is NearFarInteractor interactor &&
                 (interactor.selectInput.ReadWasPerformedThisFrame() || interactor.uiPressInput.ReadWasPerformedThisFrame()))
             {
-                _card.Toggle(this);
+                if (actionOnly) Pressed?.Invoke();
+                else _card.Toggle(this);
                 return;
             }
         }

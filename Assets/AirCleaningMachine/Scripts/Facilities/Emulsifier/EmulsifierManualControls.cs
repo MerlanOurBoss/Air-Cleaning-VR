@@ -1,4 +1,3 @@
-using System.Globalization;
 using TMPro;
 using Unity.VRTemplate;
 using UnityEngine;
@@ -19,8 +18,6 @@ public class EmulsifierManualControls : MonoBehaviour
     [SerializeField] private XRKnob valve;
     [SerializeField] private TMP_Text valveValue;
 
-    private static readonly NumberFormatInfo RuNumbers = new NumberFormatInfo { NumberDecimalSeparator = "," };
-
     private bool _syncing;
 
     private void Start()
@@ -35,6 +32,7 @@ public class EmulsifierManualControls : MonoBehaviour
         effects.StateChanged += Sync;
         calculation.Changed += Sync;
         fault.Changed += Sync;
+        L10n.Changed += Sync;
     }
 
     private void OnDestroy()
@@ -42,6 +40,7 @@ public class EmulsifierManualControls : MonoBehaviour
         effects.StateChanged -= Sync;
         calculation.Changed -= Sync;
         fault.Changed -= Sync;
+        L10n.Changed -= Sync;
     }
 
     private void OnBreakerMoved(float value)
@@ -70,14 +69,14 @@ public class EmulsifierManualControls : MonoBehaviour
     {
         _syncing = true;
 
-        // После взрыва рубильник заблокирован, как и кнопка «Пуск» на планшете.
-        breaker.enabled = !fault.HasExploded;
+        // После взрыва и при блокировке для обслуживания рубильник не двигается, как и кнопка «Пуск» на планшете.
+        breaker.enabled = !fault.HasExploded && !effects.PowerLocked;
         if (!breaker.isSelected) breaker.value = effects.IsPlaying ? 1f : 0f;
 
         var options = EmulsifierCalculation.WaterFlowOptions;
         int index = System.Array.FindIndex(options, v => Mathf.Approximately(v, calculation.WaterFlow));
         if (index >= 0 && !valve.isSelected) valve.value = index / (options.Length - 1f);
-        valveValue.text = calculation.WaterFlow.ToString("0.00", RuNumbers) + " м³/с";
+        valveValue.text = L10n.Get("unit.m3_s", L10n.Number(calculation.WaterFlow, "0.00"));
 
         _syncing = false;
     }

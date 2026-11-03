@@ -37,13 +37,18 @@ public class NodeLabelCard : MonoBehaviour
         // Сама карточка выключается, а отсчёт задержки подсказки должен идти и в это время.
         _driver = new GameObject("Node Label Card Driver").AddComponent<ActiveDriver>();
         _driver.Card = this;
+        L10n.Changed += Invalidate;
         gameObject.SetActive(false);
     }
 
     private void OnDestroy()
     {
+        L10n.Changed -= Invalidate;
         if (_driver != null) Destroy(_driver.gameObject);
     }
+
+    /// <summary>Текст показанного узла изменился: язык или подсказка.</summary>
+    public void Invalidate() => _shown = null;
 
     public void HoverEnter(InspectableNode node)
     {
@@ -82,7 +87,7 @@ public class NodeLabelCard : MonoBehaviour
             _shownFull = full;
             Present(full
                 ? "<b>" + node.Title + "</b>\n<size=75%>" + node.Description + "</size>"
-                : "<b>" + node.Title + "</b>\n<size=75%>Нажмите, чтобы узнать подробнее</size>");
+                : "<b>" + node.Title + "</b>\n<size=75%>" + node.Hint + "</size>");
         }
 
         Follow(node);

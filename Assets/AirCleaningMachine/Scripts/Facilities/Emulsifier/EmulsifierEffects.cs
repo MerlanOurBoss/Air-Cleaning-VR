@@ -14,10 +14,13 @@ public class EmulsifierEffects : MonoBehaviour
     [SerializeField] private bool playOnStart = true;
 
     public bool IsPlaying { get; private set; }
+    /// <summary>Рубильник заблокирован для обслуживания: пуск невозможен ни с поста, ни с планшета.</summary>
+    public bool PowerLocked { get; private set; }
 
     public event System.Action StateChanged;
 
     private float _waterShare = 1f;
+    private bool _gasFlowing = true;
 
     private void Start()
     {
@@ -26,20 +29,18 @@ public class EmulsifierEffects : MonoBehaviour
 
     public void Play()
     {
-        foreach (var smoke in smokes)
-            if (smoke != null) smoke.Play();
+        if (PowerLocked) return;
 
         IsPlaying = true;
+        ApplySmoke();
         ApplyWater();
         StateChanged?.Invoke();
     }
 
     public void Stop()
     {
-        foreach (var smoke in smokes)
-            if (smoke != null) smoke.Stop();
-
         IsPlaying = false;
+        ApplySmoke();
         ApplyWater();
         StateChanged?.Invoke();
     }
@@ -48,6 +49,30 @@ public class EmulsifierEffects : MonoBehaviour
     {
         if (IsPlaying) Stop();
         else Play();
+    }
+
+    public void SetPowerLocked(bool locked)
+    {
+        if (locked == PowerLocked) return;
+        PowerLocked = locked;
+        StateChanged?.Invoke();
+    }
+
+    /// <summary>Без дымососа нет тяги: дым больше не идёт через установку.</summary>
+    public void SetGasFlowing(bool flowing)
+    {
+        _gasFlowing = flowing;
+        ApplySmoke();
+    }
+
+    private void ApplySmoke()
+    {
+        foreach (var smoke in smokes)
+        {
+            if (smoke == null) continue;
+            if (IsPlaying && _gasFlowing) smoke.Play();
+            else smoke.Stop();
+        }
     }
 
     /// <summary>Доля подачи воды 0–1: при нехватке жидкости форсунки пересыхают по одной, газ продолжает идти.</summary>

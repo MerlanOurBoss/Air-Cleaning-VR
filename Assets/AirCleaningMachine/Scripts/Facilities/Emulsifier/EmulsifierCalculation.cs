@@ -9,7 +9,7 @@ public class EmulsifierCalculation : MonoBehaviour
 {
     // Варианты входов — как в выпадающих списках оригинала.
     public static readonly float[] MainGasFlowOptions = { 100000f, 150000f, 200000f, 250000f, 400000f, 500000f }; // м³/ч
-    public static readonly string[] MainGasFlowNotes = { "", "ТЭЦ Павлодар", "", "ТЭЦ Алматы", "", "" };
+    public static readonly string[] MainGasFlowNoteKeys = { "", "calc.note.pavlodar", "", "calc.note.almaty", "", "" };
     public static readonly float[] GasFlowOptions = { 10f, 12f, 14f };        // м³/с
     public static readonly float[] WaterFlowOptions = { 0.01f, 0.05f, 0.1f }; // м³/с
     public static readonly float[] TemperatureOptions = { 5f, 15f, 25f };     // °C

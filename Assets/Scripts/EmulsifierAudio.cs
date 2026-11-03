@@ -62,8 +62,8 @@ public class EmulsifierAudio : MonoBehaviour
         float waterFlow = Mathf.InverseLerp(waterFlows[0], waterFlows[waterFlows.Length - 1], calculation.WaterFlow);
         int level = settings.PumpLevel - 1;
 
-        Drive(fan, _fanVolume * Mathf.Lerp(0.7f, 1f, mainFlow) * run, Mathf.Lerp(0.92f, 1.06f, gasFlow), run);
-        Drive(pump, _pumpVolume * run, PumpPitch[level], run);
+        Drive(fan, _fanVolume * Mathf.Lerp(0.7f, 1f, mainFlow) * fault.GasShare * run, Mathf.Lerp(0.92f, 1.06f, gasFlow), run);
+        Drive(pump, _pumpVolume * (fault.Fault == EmulsifierFault.FaultType.PumpFailure ? 0f : 1f) * run, PumpPitch[level], run);
         Drive(water, _waterVolume * WaterVolume[level] * Mathf.Lerp(0.5f, 1f, waterFlow) * fault.WaterShare * run, 1f, run);
     }
 

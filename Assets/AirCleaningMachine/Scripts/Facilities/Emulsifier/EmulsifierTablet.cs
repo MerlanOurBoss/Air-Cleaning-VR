@@ -25,7 +25,7 @@ public class EmulsifierTablet : MonoBehaviour
     [SerializeField] private Color activeColor = new Color(0.125f, 0.588f, 0.953f);
     [SerializeField] private Color stopColor = new Color(0.8f, 0.25f, 0.2f);
 
-    private static readonly string[] FluidNames = { "Вода", "Едкий натрий", "Сода" };
+    private static readonly string[] FluidKeys = { "fluid.water", "fluid.caustic", "fluid.soda" };
 
     private void Start()
     {
@@ -54,11 +54,13 @@ public class EmulsifierTablet : MonoBehaviour
         effects.StateChanged += Refresh;
         xray.Changed += Refresh;
         cleaning.Changed += Refresh;
+        L10n.Changed += Refresh;
         Refresh();
     }
 
     private void OnDestroy()
     {
+        L10n.Changed -= Refresh;
         if (settings != null) settings.Changed -= Refresh;
         if (effects != null) effects.StateChanged -= Refresh;
         if (xray != null) xray.Changed -= Refresh;
@@ -68,7 +70,7 @@ public class EmulsifierTablet : MonoBehaviour
     private void Refresh()
     {
         bool running = effects.IsPlaying;
-        powerLabel.text = running ? "Стоп" : "Пуск";
+        powerLabel.text = L10n.Get(running ? "ctl.stop" : "ctl.start");
         Tint(powerButton, running ? stopColor : activeColor);
 
         for (int i = 0; i < pumpButtons.Length; i++)
@@ -78,13 +80,12 @@ public class EmulsifierTablet : MonoBehaviour
         for (int i = 0; i < fluidButtons.Length; i++)
             Tint(fluidButtons[i], i + 1 == fluid ? activeColor : normalColor);
 
-        xrayLabel.text = xray.IsOn ? "Вернуть" : "Сделать прозрачным";
+        xrayLabel.text = L10n.Get(xray.IsOn ? "ctl.xray.off" : "ctl.xray.on");
         Tint(xrayButton, xray.IsOn ? activeColor : normalColor);
 
-        statusText.text = (running ? "Работает" : "Остановлен")
-                          + "  ·  насос " + settings.PumpLevel
-                          + "  ·  " + FluidNames[fluid - 1]
-                          + (running ? "  ·  очистка " + cleaning.EfficiencyPercent + " %" : "");
+        statusText.text = L10n.Get("ctl.status", L10n.Get(running ? "ctl.running" : "ctl.stopped"), settings.PumpLevel, L10n.Get(FluidKeys[fluid - 1]))
+                          + (running ? L10n.Get("ctl.status.cleaning", cleaning.EfficiencyPercent) : "")
+                          + (effects.PowerLocked ? L10n.Get("ctl.status.locked") : "");
     }
 
     internal static void Tint(Button button, Color color)

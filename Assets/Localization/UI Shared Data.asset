@@ -1,0 +1,704 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: acd493fe0f259f843b3d6d389b220933
+  m_Entries:
+  - m_Id: 2382966784
+    m_Key: app.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2416521216
+    m_Key: tab.control
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2416521217
+    m_Key: tab.calc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2416521218
+    m_Key: tab.fault
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715520
+    m_Key: tab.training
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715521
+    m_Key: mode.exam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715522
+    m_Key: mode.cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715523
+    m_Key: label.mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715524
+    m_Key: label.language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715525
+    m_Key: label.work
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715526
+    m_Key: label.pump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715527
+    m_Key: label.fluid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715528
+    m_Key: label.shell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715529
+    m_Key: fluid.water
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715530
+    m_Key: fluid.caustic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715531
+    m_Key: fluid.soda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715532
+    m_Key: ctl.start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715533
+    m_Key: ctl.stop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715534
+    m_Key: ctl.xray.on
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715535
+    m_Key: ctl.xray.off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715536
+    m_Key: ctl.running
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715537
+    m_Key: ctl.stopped
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715538
+    m_Key: ctl.status
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715539
+    m_Key: ctl.status.cleaning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715540
+    m_Key: ctl.status.locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715541
+    m_Key: calc.main
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715542
+    m_Key: calc.gas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715543
+    m_Key: calc.water
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715544
+    m_Key: calc.temp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715545
+    m_Key: calc.note.pavlodar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715546
+    m_Key: calc.note.almaty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715547
+    m_Key: calc.r.gasSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715548
+    m_Key: calc.r.waterSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715549
+    m_Key: calc.r.gasMass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715550
+    m_Key: calc.r.waterMass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715551
+    m_Key: calc.r.transfer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715552
+    m_Key: calc.r.consumption
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715553
+    m_Key: calc.r.diameter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715554
+    m_Key: calc.r.height
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715555
+    m_Key: calc.r.cost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715556
+    m_Key: unit.m_s
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715557
+    m_Key: unit.m3_s
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715558
+    m_Key: unit.m3_h
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715559
+    m_Key: unit.m
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715560
+    m_Key: unit.tg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715561
+    m_Key: unit.kpa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715562
+    m_Key: fault.drill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715563
+    m_Key: fault.drill.equipment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715564
+    m_Key: fault.random
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715565
+    m_Key: fault.clog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715566
+    m_Key: fault.lowLevel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715567
+    m_Key: fault.pump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715568
+    m_Key: fault.fan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715569
+    m_Key: fault.gauge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715570
+    m_Key: fix.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715571
+    m_Key: fix.clean
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715572
+    m_Key: fix.refill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715573
+    m_Key: fix.pump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715574
+    m_Key: fix.fan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715575
+    m_Key: fix.gauge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715576
+    m_Key: fault.plant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715577
+    m_Key: fault.restore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715578
+    m_Key: fault.rules.on
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715579
+    m_Key: fault.rules.off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715580
+    m_Key: fault.readout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715581
+    m_Key: fault.alarm.pressure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715582
+    m_Key: fault.alarm.level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715583
+    m_Key: fault.explosion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715584
+    m_Key: name.clog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715585
+    m_Key: name.lowLevel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715586
+    m_Key: name.pump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715587
+    m_Key: name.fan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715588
+    m_Key: name.gauge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715589
+    m_Key: msg.random
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715590
+    m_Key: msg.drill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715591
+    m_Key: msg.restored
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715592
+    m_Key: msg.noFault
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715593
+    m_Key: msg.stopFirst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715594
+    m_Key: msg.lockFirst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715595
+    m_Key: msg.ppeFirst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715596
+    m_Key: msg.fixed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715597
+    m_Key: msg.fixed.restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715598
+    m_Key: msg.refilling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715599
+    m_Key: msg.fixSetting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715600
+    m_Key: rule.sodaCold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715601
+    m_Key: rule.lowIrrigation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715602
+    m_Key: rule.pumpSlow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715603
+    m_Key: rule.pumpWeak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715604
+    m_Key: card.hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715605
+    m_Key: card.hint.wear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715606
+    m_Key: card.hint.remove
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715607
+    m_Key: card.hint.lock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715608
+    m_Key: card.hint.unlock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715609
+    m_Key: card.hint.lockRefused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715610
+    m_Key: node.gasInlet.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715611
+    m_Key: node.gasInlet.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715612
+    m_Key: node.pump.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715613
+    m_Key: node.pump.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715614
+    m_Key: node.gasOutlet.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715615
+    m_Key: node.gasOutlet.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715616
+    m_Key: node.manometer.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715617
+    m_Key: node.manometer.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715618
+    m_Key: node.column.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715619
+    m_Key: node.column.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715620
+    m_Key: node.level.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715621
+    m_Key: node.level.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715622
+    m_Key: node.fan.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715623
+    m_Key: node.fan.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715624
+    m_Key: node.tank.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715625
+    m_Key: node.tank.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715626
+    m_Key: ppe.helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715627
+    m_Key: ppe.goggles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715628
+    m_Key: ppe.respirator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715629
+    m_Key: ppe.gloves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715630
+    m_Key: ppe.stand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715631
+    m_Key: safety.sign
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715632
+    m_Key: lock.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715633
+    m_Key: lock.label.open
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715634
+    m_Key: lock.label.closed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715635
+    m_Key: post.on
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715636
+    m_Key: post.off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715637
+    m_Key: sc.intro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715638
+    m_Key: sc.running
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715639
+    m_Key: sc.step
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715640
+    m_Key: sc.done
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715641
+    m_Key: sc.t.node
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715642
+    m_Key: sc.t.ppe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715643
+    m_Key: sc.t.fluid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715644
+    m_Key: sc.t.pump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715645
+    m_Key: sc.t.valve
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715646
+    m_Key: sc.t.breaker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715647
+    m_Key: sc.t.smoke
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715648
+    m_Key: sc.t.clog.wait
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715649
+    m_Key: sc.t.clog.lock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715650
+    m_Key: sc.t.clog.fix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715651
+    m_Key: sc.t.restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715652
+    m_Key: sc.t.level.wait
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715653
+    m_Key: sc.t.level.fix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715654
+    m_Key: sc.t.level.done
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715655
+    m_Key: sc.t.pump.lock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715656
+    m_Key: sc.t.pump.fix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715657
+    m_Key: sc.t.fan.lock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715658
+    m_Key: sc.t.fan.fix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715659
+    m_Key: sc.t.gauge.lock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715660
+    m_Key: sc.t.gauge.fix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715661
+    m_Key: sc.exam.task
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715662
+    m_Key: sc.training.passed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715663
+    m_Key: sc.training.exploded
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715664
+    m_Key: rep.pass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715665
+    m_Key: rep.fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715666
+    m_Key: rep.explosion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715667
+    m_Key: rep.notFixed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715668
+    m_Key: rep.startup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715669
+    m_Key: rep.startup.none
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715670
+    m_Key: rep.fault
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715671
+    m_Key: rep.penalty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715672
+    m_Key: rep.time.s
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715673
+    m_Key: rep.time.min
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715674
+    m_Key: mis.setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715675
+    m_Key: mis.slow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715676
+    m_Key: mis.late
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715677
+    m_Key: mis.zone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715678
+    m_Key: mis.startNoPpe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715679
+    m_Key: mis.noFault
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715680
+    m_Key: mis.running
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715681
+    m_Key: mis.noLock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420715682
+    m_Key: mis.noPpe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16855863996416
+    m_Key: card.hint.grab.head
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16855893356544
+    m_Key: card.hint.grab.face
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1891368986013335658
+  references:
+    version: 2
+    RefIds:
+    - rid: 1891368986013335658
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1793715862085

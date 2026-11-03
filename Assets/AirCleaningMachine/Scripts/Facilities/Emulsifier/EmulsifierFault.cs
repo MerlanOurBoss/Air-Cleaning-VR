@@ -3,12 +3,19 @@ using UnityEngine;
 
 /// <summary>
 /// Учебная авария эмульгатора. Засор поднимает давление на манометре, утечка опускает уровень в уровнемере,
-/// а уровень ниже минимума тоже ведёт к росту давления. При давлении разрыва происходит взрыв.
+/// а уровень ниже минимума тоже ведёт к росту давления. Отказ насоса останавливает воду, отказ дымососа — газ,
+/// и в обоих случаях давление растёт. При давлении разрыва происходит взрыв.
+/// Неисправный манометр показывает рост, которого нет: сирена молчит, датчик на планшете в норме.
 /// Давление растёт только при работающей установке: «Стоп» — правильное первое действие при аварии.
 /// </summary>
 public class EmulsifierFault : MonoBehaviour
 {
-    public enum FaultType { None, Clog, LowLevel }
+    public enum FaultType { None, Clog, LowLevel, PumpFailure, FanFailure, GaugeFailure }
+
+    private static readonly FaultType[] AllFaults =
+    {
+        FaultType.Clog, FaultType.LowLevel, FaultType.PumpFailure, FaultType.FanFailure, FaultType.GaugeFailure,
+    };
 
     [SerializeField] private EmulsifierEffects effects;
 
@@ -39,6 +46,10 @@ public class EmulsifierFault : MonoBehaviour
     [SerializeField] private Transform needle;
     [Tooltip("Давление в конце шкалы манометра, кПа.")]
     [SerializeField] private float gaugeMaxPressure = 12f;
+    [Tooltip("До какого показания доходит стрелка неисправного манометра, кПа.")]
+    [SerializeField] private float gaugeFalsePressure = 9f;
+    [Tooltip("За сколько секунд стрелка неисправного манометра доходит до этого показания.")]
+    [SerializeField] private float gaugeFalseTime = 25f;
     [Tooltip("Угол стрелки в начале шкалы; конец шкалы — такой же угол с другой стороны.")]
     [SerializeField] private float needleZeroAngle = -135f;
     [SerializeField] private Transform liquid;
@@ -62,8 +73,10 @@ public class EmulsifierFault : MonoBehaviour
     /// <summary>Неправильная настройка, из-за которой началась авария; пусто у аварий, запущенных вручную.</summary>
     public string Cause { get; private set; } = "";
 
-    /// <summary>Доля подачи воды: насосу нечего качать, когда уровень упал до минимума.</summary>
-    public float WaterShare => Mathf.InverseLerp(minLevel, waterFullLevel, Level);
+    /// <summary>Доля подачи воды: насосу нечего качать, когда уровень упал до минимума, а отказавший насос не качает совсем.</summary>
+    public float WaterShare => Fault == FaultType.PumpFailure ? 0f : Mathf.InverseLerp(minLevel, waterFullLevel, Level);
+    /// <summary>Доля газа: без дымососа нет тяги.</summary>
+    public float GasShare => Fault == FaultType.FanFailure ? 0f : 1f;
     public float WarningPressure => warningPressure;
     public float MinLevel => minLevel;
     public bool IsAlarm => !HasExploded && (Pressure >= warningPressure || Level <= minLevel);
@@ -82,6 +95,8 @@ public class EmulsifierFault : MonoBehaviour
     private float _liquidBottom, _liquidHeight;
     private float _hissVolume;
     private float _appliedWaterShare = 1f;
+    private float _appliedGasShare = 1f;
+    private float _gaugeReading;
     private Material _lampMaterial;
 
     private void Awake()
@@ -113,6 +128,12 @@ public class EmulsifierFault : MonoBehaviour
             _appliedWaterShare = WaterShare;
             effects.SetWaterShare(_appliedWaterShare);
         }
+
+        if (!Mathf.Approximately(_appliedGasShare, GasShare))
+        {
+            _appliedGasShare = GasShare;
+            effects.SetGasFlowing(_appliedGasShare > 0f);
+        }
     }
 
     private void Simulate(float dt)
@@ -135,11 +156,16 @@ public class EmulsifierFault : MonoBehaviour
             Level = Mathf.MoveTowards(Level, 0f, dt / Mathf.Max(drainTime, 0.01f));
         }
 
-        bool rising = running && (Fault == FaultType.Clog || (Fault == FaultType.LowLevel && Level <= minLevel));
+        bool rising = running && (Fault == FaultType.Clog || Fault == FaultType.PumpFailure || Fault == FaultType.FanFailure
+                                  || (Fault == FaultType.LowLevel && Level <= minLevel));
         if (rising)
             Pressure += (burstPressure - normalPressure) / Mathf.Max(riseTime, 0.01f) * dt;
         else
             Pressure = Mathf.MoveTowards(Pressure, running ? normalPressure : 0f, burstPressure / Mathf.Max(reliefTime, 0.01f) * dt);
+
+        _gaugeReading = Fault == FaultType.GaugeFailure
+            ? Mathf.MoveTowards(_gaugeReading, gaugeFalsePressure, gaugeFalsePressure / Mathf.Max(gaugeFalseTime, 0.01f) * dt)
+            : Pressure;
 
         if (IsAlarm && Fault != FaultType.None) _alarmRaised = true;
         if (Pressure >= burstPressure) Explode();
@@ -147,9 +173,9 @@ public class EmulsifierFault : MonoBehaviour
 
     private void ApplyInstruments()
     {
-        float scale = Mathf.Clamp01(Pressure / gaugeMaxPressure);
-        // Лёгкое дрожание стрелки у работающей установки: прибор выглядит живым.
-        float jitter = effects.IsPlaying ? (Mathf.PerlinNoise(Time.time * 6f, 0f) - 0.5f) * 1.5f : 0f;
+        float scale = Mathf.Clamp01(_gaugeReading / gaugeMaxPressure);
+        // Лёгкое дрожание стрелки у работающей установки: прибор выглядит живым. Неисправный не дрожит: это тоже признак.
+        float jitter = effects.IsPlaying && Fault != FaultType.GaugeFailure ? (Mathf.PerlinNoise(Time.time * 6f, 0f) - 0.5f) * 1.5f : 0f;
         needle.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(needleZeroAngle, -needleZeroAngle, scale) + jitter);
 
         float height = _liquidHeight * Level;
@@ -175,15 +201,28 @@ public class EmulsifierFault : MonoBehaviour
         else if (pressureShare <= 0f && hiss.isPlaying) hiss.Stop();
     }
 
-    public void StartClog() => Begin(FaultType.Clog);
+    public void StartFault(FaultType type) => Begin(type);
 
-    public void StartLowLevel() => Begin(FaultType.LowLevel);
+    public static FaultType RandomFault() => AllFaults[UnityEngine.Random.Range(0, AllFaults.Length)];
+
+    /// <summary>Ключ названия аварии в таблице локализации.</summary>
+    public static string NameKey(FaultType type)
+    {
+        switch (type)
+        {
+            case FaultType.Clog: return "name.clog";
+            case FaultType.PumpFailure: return "name.pump";
+            case FaultType.FanFailure: return "name.fan";
+            case FaultType.GaugeFailure: return "name.gauge";
+            default: return "name.lowLevel";
+        }
+    }
 
     /// <summary>Авария случится позже и без объявления: её нужно заметить по приборам.</summary>
     public void StartRandom()
     {
         if (HasExploded) return;
-        _pending = UnityEngine.Random.value < 0.5f ? FaultType.Clog : FaultType.LowLevel;
+        _pending = RandomFault();
         _pendingDelay = UnityEngine.Random.Range(randomDelayMin, randomDelayMax);
         Changed?.Invoke();
     }
@@ -216,10 +255,10 @@ public class EmulsifierFault : MonoBehaviour
         Changed?.Invoke();
     }
 
-    /// <summary>Прочистка возможна только на остановленной установке.</summary>
-    public bool TryClean()
+    /// <summary>Обслуживание возможно только на остановленной установке с заблокированным рубильником.</summary>
+    public bool TryRepair(FaultType type)
     {
-        if (Fault != FaultType.Clog || effects.IsPlaying) return false;
+        if (Fault != type || effects.IsPlaying || !effects.PowerLocked) return false;
         Fault = FaultType.None;
         Changed?.Invoke();
         return true;

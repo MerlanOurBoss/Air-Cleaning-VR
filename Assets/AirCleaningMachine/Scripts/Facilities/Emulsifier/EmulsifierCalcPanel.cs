@@ -1,4 +1,3 @@
-using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,11 +32,13 @@ public class EmulsifierCalcPanel : MonoBehaviour
         Bind(temperatureButtons, EmulsifierCalculation.TemperatureOptions, calculation.SetTemperature);
 
         calculation.Changed += Refresh;
+        L10n.Changed += Refresh;
         Refresh();
     }
 
     private void OnDestroy()
     {
+        L10n.Changed -= Refresh;
         if (calculation != null) calculation.Changed -= Refresh;
     }
 
@@ -60,9 +61,9 @@ public class EmulsifierCalcPanel : MonoBehaviour
     private void Refresh()
     {
         int main = IndexOf(EmulsifierCalculation.MainGasFlowOptions, calculation.MainGasFlow);
-        string note = main >= 0 ? EmulsifierCalculation.MainGasFlowNotes[main] : "";
-        mainFlowValue.text = Format(calculation.MainGasFlow, "#,0") + " м³/ч"
-                             + (string.IsNullOrEmpty(note) ? "" : "\n<size=70%><color=#9AA>" + note + "</color></size>");
+        string note = main >= 0 ? EmulsifierCalculation.MainGasFlowNoteKeys[main] : "";
+        mainFlowValue.text = L10n.Get("unit.m3_h", L10n.Number(calculation.MainGasFlow, "#,0"))
+                             + (string.IsNullOrEmpty(note) ? "" : "\n<size=70%><color=#9AA>" + L10n.Get(note) + "</color></size>");
         mainFlowPrev.interactable = main > 0;
         mainFlowNext.interactable = main < EmulsifierCalculation.MainGasFlowOptions.Length - 1;
 
@@ -70,26 +71,30 @@ public class EmulsifierCalcPanel : MonoBehaviour
         Highlight(waterFlowButtons, EmulsifierCalculation.WaterFlowOptions, calculation.WaterFlow);
         Highlight(temperatureButtons, EmulsifierCalculation.TemperatureOptions, calculation.Temperature);
 
-        resultLabels.text = string.Join("\n", ResultNames);
+        // Дробные значения на кнопках пишутся по правилам языка.
+        for (int i = 0; i < waterFlowButtons.Length; i++)
+            waterFlowButtons[i].GetComponentInChildren<TMP_Text>().text = L10n.Number(EmulsifierCalculation.WaterFlowOptions[i], "0.0#");
+
+        resultLabels.text = string.Join("\n", System.Array.ConvertAll(ResultNameKeys, key => L10n.Get(key)));
         resultValues.text = string.Join("\n", new[]
         {
-            Format(calculation.GasSpeed, "0.000") + " м/с",
-            Format(calculation.WaterSpeed, "0.000") + " м/с",
-            Format(calculation.GasMassFlow, "0.000") + " м³/с",
-            Format(calculation.WaterMassFlow, "0.000") + " м³/с",
-            Format(calculation.MassTransfer, "0.0") + " м/с",
-            Format(calculation.LiquidConsumption, "0.000") + " м³/с",
-            Format(calculation.Diameter, "0.0") + " м",
-            Format(calculation.Height, "0.0") + " м",
-            Format(calculation.ConsumablesCost, "#,0.0") + " тг",
+            L10n.Get("unit.m_s", L10n.Number(calculation.GasSpeed, "0.000")),
+            L10n.Get("unit.m_s", L10n.Number(calculation.WaterSpeed, "0.000")),
+            L10n.Get("unit.m3_s", L10n.Number(calculation.GasMassFlow, "0.000")),
+            L10n.Get("unit.m3_s", L10n.Number(calculation.WaterMassFlow, "0.000")),
+            L10n.Get("unit.m_s", L10n.Number(calculation.MassTransfer, "0.0")),
+            L10n.Get("unit.m3_s", L10n.Number(calculation.LiquidConsumption, "0.000")),
+            L10n.Get("unit.m", L10n.Number(calculation.Diameter, "0.0")),
+            L10n.Get("unit.m", L10n.Number(calculation.Height, "0.0")),
+            L10n.Get("unit.tg", L10n.Number(calculation.ConsumablesCost, "#,0.0")),
         });
     }
 
     // Подписи результатов — как в MathModuleForEmul.
-    private static readonly string[] ResultNames =
+    private static readonly string[] ResultNameKeys =
     {
-        "Скорость газа", "Скорость воды", "Массовый поток газа", "Массовый поток жидкости",
-        "Коэф. массопереноса", "Расход жидкости", "Диаметр аппарата", "Высота аппарата", "Расходники",
+        "calc.r.gasSpeed", "calc.r.waterSpeed", "calc.r.gasMass", "calc.r.waterMass",
+        "calc.r.transfer", "calc.r.consumption", "calc.r.diameter", "calc.r.height", "calc.r.cost",
     };
 
     private void Highlight(Button[] buttons, float[] options, float current)
@@ -97,15 +102,6 @@ public class EmulsifierCalcPanel : MonoBehaviour
         for (int i = 0; i < buttons.Length; i++)
             EmulsifierTablet.Tint(buttons[i], Mathf.Approximately(options[i], current) ? activeColor : normalColor);
     }
-
-    // Русский формат: пробел между разрядами, запятая в дробной части.
-    private static readonly NumberFormatInfo RuNumbers = new NumberFormatInfo
-    {
-        NumberDecimalSeparator = ",",
-        NumberGroupSeparator = " ",
-    };
-
-    private static string Format(double value, string format) => value.ToString(format, RuNumbers);
 
     private static int IndexOf(float[] options, float value)
     {

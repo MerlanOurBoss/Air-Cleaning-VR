@@ -3,16 +3,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Страница «Обучение» на планшете: выбор режима и итог. Текущая задача показывается в отдельной полосе
+/// Страница «Обучение» на планшете: выбор режима и языка, итог. Текущая задача показывается в отдельной полосе
 /// над экраном: действия выполняются на других вкладках, и задача не должна при этом пропадать.
 /// </summary>
 public class EmulsifierScenarioPanel : MonoBehaviour
 {
-    private const string Intro = "<b>Обучение</b>: пошаговые подсказки и две учебные аварии.\n"
-                                 + "<b>Экзамен</b>: подсказок нет, авария начнётся внезапно, в конце будет оценка.\n"
-                                 + "Оба режима сбрасывают настройки установки.";
-    private const string Running = "Сценарий идёт. Задача показана над планшетом.";
-
     [SerializeField] private EmulsifierScenario scenario;
     [SerializeField] private TabletTabs tabs;
     [Tooltip("Номер вкладки этой страницы: на неё планшет переходит, когда появился итог.")]
@@ -25,6 +20,12 @@ public class EmulsifierScenarioPanel : MonoBehaviour
     [SerializeField] private GameObject taskStrip;
     [SerializeField] private TMP_Text taskText;
 
+    [Tooltip("Кнопки языков, в том же порядке, что и коды.")]
+    [SerializeField] private Button[] languageButtons;
+    [SerializeField] private string[] languageCodes = { "ru", "kk", "en" };
+    [SerializeField] private Color normalColor = new Color(0.18f, 0.18f, 0.18f);
+    [SerializeField] private Color activeColor = new Color(0.125f, 0.588f, 0.953f);
+
     private void Start()
     {
         // Префаб планшета не может ссылаться на объекты сцены.
@@ -34,13 +35,21 @@ public class EmulsifierScenarioPanel : MonoBehaviour
         examButton.onClick.AddListener(scenario.StartExam);
         cancelButton.onClick.AddListener(scenario.Cancel);
 
+        for (int i = 0; i < languageButtons.Length; i++)
+        {
+            string code = languageCodes[i];
+            languageButtons[i].onClick.AddListener(() => L10n.SetLanguage(code));
+        }
+
         scenario.Changed += Refresh;
         scenario.Finished += ShowPage;
+        L10n.Changed += Refresh;
         Refresh();
     }
 
     private void OnDestroy()
     {
+        L10n.Changed -= Refresh;
         if (scenario == null) return;
         scenario.Changed -= Refresh;
         scenario.Finished -= ShowPage;
@@ -55,8 +64,13 @@ public class EmulsifierScenarioPanel : MonoBehaviour
         examButton.interactable = !running;
         cancelButton.interactable = running;
 
-        info.text = running ? Running : string.IsNullOrEmpty(scenario.Report) ? Intro : scenario.Report;
+        string report = scenario.Report;
+        info.text = running ? L10n.Get("sc.running") : string.IsNullOrEmpty(report) ? L10n.Get("sc.intro") : report;
         taskStrip.SetActive(running);
         taskText.text = scenario.Task;
+
+        string current = L10n.CurrentCode;
+        for (int i = 0; i < languageButtons.Length; i++)
+            EmulsifierTablet.Tint(languageButtons[i], languageCodes[i] == current ? activeColor : normalColor);
     }
 }

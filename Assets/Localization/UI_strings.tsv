@@ -1,0 +1,170 @@
+key	ru	kk	en
+app.title	Эмульгатор	Эмульгатор	Emulsifier
+tab.control	Управление	Басқару	Control
+tab.calc	Расчёт	Есептеу	Calculation
+tab.fault	Авария	Апат	Faults
+tab.training	Обучение	Оқыту	Training
+mode.exam	Экзамен	Емтихан	Exam
+mode.cancel	Прервать	Тоқтату	Cancel
+label.mode	Режим	Режим	Mode
+label.language	Язык	Тіл	Language
+label.work	Работа	Жұмыс	Operation
+label.pump	Насос	Сорғы	Pump
+label.fluid	Жидкость	Сұйықтық	Liquid
+label.shell	Корпус	Корпус	Casing
+fluid.water	Вода	Су	Water
+fluid.caustic	Едкий натрий	Күйдіргіш натрий	Caustic soda
+fluid.soda	Сода	Сода	Soda
+ctl.start	Пуск	Іске қосу	Start
+ctl.stop	Стоп	Тоқтату	Stop
+ctl.xray.on	Сделать прозрачным	Мөлдір ету	Make transparent
+ctl.xray.off	Вернуть	Қайтару	Restore
+ctl.running	Работает	Жұмыс істеп тұр	Running
+ctl.stopped	Остановлен	Тоқтатылған	Stopped
+ctl.status	{0}  ·  насос {1}  ·  {2}	{0}  ·  сорғы {1}  ·  {2}	{0}  ·  pump {1}  ·  {2}
+ctl.status.cleaning	  ·  очистка {0} %	  ·  тазарту {0} %	  ·  cleaning {0} %
+ctl.status.locked	  ·  рубильник заблокирован	  ·  ажыратқыш бұғатталған	  ·  breaker locked
+calc.main	Газ установки, м³/ч	Қондырғы газы, м³/сағ	Plant gas, m³/h
+calc.gas	Расход газа, м³/с	Газ шығыны, м³/с	Gas flow, m³/s
+calc.water	Расход жидкости, м³/с	Сұйықтық шығыны, м³/с	Liquid flow, m³/s
+calc.temp	Температура, °C	Температура, °C	Temperature, °C
+calc.note.pavlodar	ТЭЦ Павлодар	Павлодар ЖЭО	Pavlodar CHP
+calc.note.almaty	ТЭЦ Алматы	Алматы ЖЭО	Almaty CHP
+calc.r.gasSpeed	Скорость газа	Газ жылдамдығы	Gas velocity
+calc.r.waterSpeed	Скорость воды	Су жылдамдығы	Water velocity
+calc.r.gasMass	Массовый поток газа	Газдың массалық ағыны	Gas mass flow
+calc.r.waterMass	Массовый поток жидкости	Сұйық. массалық ағыны	Liquid mass flow
+calc.r.transfer	Коэф. массопереноса	Масса алмасу коэф.	Mass transfer coef.
+calc.r.consumption	Расход жидкости	Сұйықтық шығыны	Liquid consumption
+calc.r.diameter	Диаметр аппарата	Аппарат диаметрі	Vessel diameter
+calc.r.height	Высота аппарата	Аппарат биіктігі	Vessel height
+calc.r.cost	Расходники	Шығын материалдары	Consumables
+unit.m_s	{0} м/с	{0} м/с	{0} m/s
+unit.m3_s	{0} м³/с	{0} м³/с	{0} m³/s
+unit.m3_h	{0} м³/ч	{0} м³/сағ	{0} m³/h
+unit.m	{0} м	{0} м	{0} m
+unit.tg	{0} тг	{0} тг	{0} KZT
+unit.kpa	кПа	кПа	kPa
+fault.drill	Учебная авария	Оқу апаты	Practice fault
+fault.drill.equipment	Отказ оборудования	Жабдық ақауы	Equipment failure
+fault.random	Случайная	Кездейсоқ	Random
+fault.clog	Засор	Бітелу	Clog
+fault.lowLevel	Падение уровня	Деңгейдің төмендеуі	Level drop
+fault.pump	Насос	Сорғы	Pump
+fault.fan	Дымосос	Түтін сорғыш	Exhaust fan
+fault.gauge	Манометр	Манометр	Pressure gauge
+fix.label	Устранить	Жою	Fix
+fix.clean	Прочистить	Тазарту	Clean
+fix.refill	Долить	Құю	Refill
+fix.pump	Ремонт насоса	Сорғыны жөндеу	Repair pump
+fix.fan	Ремонт дымососа	Түтін сорғышты жөндеу	Repair fan
+fix.gauge	Замена манометра	Манометрді ауыстыру	Replace gauge
+fault.plant	Установка	Қондырғы	Plant
+fault.restore	Восстановить	Қалпына келтіру	Restore
+fault.rules.on	Правила: вкл	Ережелер: қосулы	Rules: on
+fault.rules.off	Правила: выкл	Ережелер: өшірулі	Rules: off
+fault.readout	Датчик давления {0} кПа  ·  Уровень {1} %  ·  СИЗ {2} из {3}	Қысым датчигі {0} кПа  ·  Деңгей {1} %  ·  ЖҚҚ {2}/{3}	Pressure sensor {0} kPa  ·  Level {1} %  ·  PPE {2} of {3}
+fault.alarm.pressure	<color=#FF5A4A>ТРЕВОГА: высокое давление</color>	<color=#FF5A4A>ДАБЫЛ: қысым жоғары</color>	<color=#FF5A4A>ALARM: high pressure</color>
+fault.alarm.level	<color=#FF5A4A>ТРЕВОГА: низкий уровень</color>	<color=#FF5A4A>ДАБЫЛ: деңгей төмен</color>	<color=#FF5A4A>ALARM: low level</color>
+fault.explosion	<color=#FF5A4A>ВЗРЫВ. Причина: {0}.</color>	<color=#FF5A4A>ЖАРЫЛЫС. Себебі: {0}.</color>	<color=#FF5A4A>EXPLOSION. Cause: {0}.</color>
+name.clog	засор	бітелу	clog
+name.lowLevel	низкий уровень	төмен деңгей	low level
+name.pump	отказ насоса	сорғы ақауы	pump failure
+name.fan	отказ дымососа	түтін сорғыш ақауы	exhaust fan failure
+name.gauge	неисправный манометр	манометр ақауы	faulty pressure gauge
+msg.random	Авария случится в течение минуты. Следите за приборами.	Апат бір минут ішінде болады. Аспаптарды бақылаңыз.	A fault will occur within a minute. Watch the instruments.
+msg.drill	Учебная авария: {0}.	Оқу апаты: {0}.	Practice fault: {0}.
+msg.restored	Установка восстановлена. Запустите её на странице «Управление».	Қондырғы қалпына келтірілді. Оны «Басқару» бетінде іске қосыңыз.	The plant is restored. Start it on the Control page.
+msg.noFault	Этой неисправности нет.	Мұндай ақау жоқ.	There is no such fault.
+msg.stopFirst	Сначала остановите установку.	Алдымен қондырғыны тоқтатыңыз.	Stop the plant first.
+msg.lockFirst	Сначала заблокируйте рубильник на посту управления.	Алдымен басқару бекетіндегі ажыратқышты бұғаттаңыз.	Lock the breaker at the control post first.
+msg.ppeFirst	Сначала наденьте СИЗ со стойки.	Алдымен сөредегі ЖҚҚ киіңіз.	Put on the PPE from the stand first.
+msg.fixed	Неисправность устранена.	Ақау жойылды.	The fault is fixed.
+msg.fixed.restart	Снимите блокировку и запустите установку.	Бұғаттауды алып, қондырғыны іске қосыңыз.	Remove the lock and start the plant.
+msg.refilling	Идёт доливка.	Құйылып жатыр.	Refilling.
+msg.fixSetting	Исправьте настройку. {0}.	Баптауды түзетіңіз. {0}.	Correct the setting. {0}.
+rule.sodaCold	Сода при 5 °C: кристаллизация, засор	5 °C кезіндегі сода: кристалдану, бітелу	Soda at 5 °C: crystallisation, clog
+rule.lowIrrigation	Газ 14 м³/с при жидкости 0,01 м³/с: мало орошения, отложения	Газ 14 м³/с, сұйықтық 0,01 м³/с: суару аз, шөгінділер	Gas 14 m³/s with liquid 0.01 m³/s: too little irrigation, deposits
+rule.pumpSlow	Насос 1 при жидкости 0,1 м³/с: насос не успевает подавать	1-сорғы, сұйықтық 0,1 м³/с: сорғы үлгермейді	Pump 1 with liquid 0.1 m³/s: the pump cannot keep up
+rule.pumpWeak	Насос 1 при газе установки от 400 000 м³/ч: слабый насос	1-сорғы, қондырғы газы 400 000 м³/сағ бастап: сорғы әлсіз	Pump 1 with plant gas from 400,000 m³/h: the pump is too weak
+card.hint	Нажмите, чтобы узнать подробнее	Толығырақ білу үшін басыңыз	Press to learn more
+card.hint.wear	Нажмите, чтобы надеть	Кию үшін басыңыз	Press to put on
+card.hint.remove	Надето. Нажмите, чтобы снять	Киілген. Шешу үшін басыңыз	Worn. Press to take off
+card.hint.grab.head	Возьмите рукой и поднесите к голове	Қолға алып, басқа апарыңыз	Grab it and bring it to your head
+card.hint.grab.face	Возьмите рукой и поднесите к лицу	Қолға алып, бетке апарыңыз	Grab it and bring it to your face
+card.hint.lock	Нажмите, чтобы заблокировать рубильник	Ажыратқышты бұғаттау үшін басыңыз	Press to lock the breaker
+card.hint.unlock	Заблокировано. Нажмите, чтобы снять блокировку	Бұғатталған. Бұғаттауды алу үшін басыңыз	Locked. Press to remove the lock
+card.hint.lockRefused	Сначала остановите установку	Алдымен қондырғыны тоқтатыңыз	Stop the plant first
+node.gasInlet.title	Вход газа	Газ кірісі	Gas inlet
+node.gasInlet.desc	Сюда поступает загрязнённый газ.	Ластанған газ осы жерден кіреді.	Contaminated gas enters here.
+node.pump.title	Насос	Сорғы	Pump
+node.pump.desc	Подаёт жидкость из бака к форсункам колонны. Мощность задаётся уровнем от 1 до 4.	Сұйықтықты бактан колонна бүріккіштеріне береді. Қуаты 1-ден 4-ке дейінгі деңгеймен беріледі.	Feeds liquid from the tank to the column nozzles. Power is set by a level from 1 to 4.
+node.gasOutlet.title	Выход газа	Газ шығысы	Gas outlet
+node.gasOutlet.desc	Отсюда очищенный газ уходит к дымососу и дымовой трубе.	Тазартылған газ осы жерден түтін сорғыш пен мұржаға кетеді.	Cleaned gas leaves here for the exhaust fan and the stack.
+node.manometer.title	Манометр	Манометр	Pressure gauge
+node.manometer.desc	Давление в колонне. Норма 2,5 кПа, красная зона от 6 кПа, при 10 кПа колонну разрывает.	Колоннадағы қысым. Норма 2,5 кПа, қызыл аймақ 6 кПа-дан, 10 кПа кезінде колонна жарылады.	Pressure in the column. Normal is 2.5 kPa, the red zone starts at 6 kPa, and at 10 kPa the column bursts.
+node.column.title	Колонна эмульгатора	Эмульгатор колоннасы	Emulsifier column
+node.column.desc	Основной аппарат. Газ поднимается снизу вверх и смешивается с жидкостью, загрязнения переходят в неё.	Негізгі аппарат. Газ төменнен жоғары көтеріліп, сұйықтықпен араласады, ластаушы заттар сұйықтыққа өтеді.	The main vessel. Gas rises from the bottom and mixes with the liquid, and contaminants pass into it.
+node.level.title	Уровнемер	Деңгей өлшегіш	Level gauge
+node.level.desc	Уровень жидкости. На нижней красной отметке вода перестаёт поступать в колонну.	Сұйықтық деңгейі. Төменгі қызыл белгіде су колоннаға түсуін тоқтатады.	Liquid level. At the lower red mark, water stops reaching the column.
+node.fan.title	Дымосос	Түтін сорғыш	Exhaust fan
+node.fan.desc	Создаёт тягу: протягивает газ через всю установку и направляет его в дымовую трубу.	Тартым жасайды: газды бүкіл қондырғы арқылы өткізіп, мұржаға бағыттайды.	Creates draught: it pulls gas through the whole plant and sends it to the stack.
+node.tank.title	Бак	Бак	Tank
+node.tank.desc	Запас жидкости, которую насос подаёт в колонну.	Сорғы колоннаға беретін сұйықтық қоры.	The supply of liquid that the pump feeds to the column.
+ppe.helmet	Каска	Каска	Hard hat
+ppe.goggles	Защитные очки	Қорғаныш көзілдірігі	Safety goggles
+ppe.respirator	Респиратор	Респиратор	Respirator
+ppe.gloves	Перчатки	Қолғап	Gloves
+ppe.stand	СИЗ: наденьте перед входом	ЖҚҚ: кірер алдында киіңіз	PPE: put on before entering
+safety.sign	ОПАСНАЯ ЗОНА\nВход только в СИЗ	ҚАУІПТІ АЙМАҚ\nТек ЖҚҚ-мен кіруге болады	DANGER ZONE\nEnter only with PPE
+lock.title	Блокировка рубильника	Ажыратқышты бұғаттау	Breaker lock
+lock.label.open	БЛОКИРОВКА\nснята	БҰҒАТТАУ\nалынған	LOCK\noff
+lock.label.closed	БЛОКИРОВКА\nустановлена	БҰҒАТТАУ\nқойылған	LOCK\non
+post.on	ВКЛ	ҚОС	ON
+post.off	ВЫКЛ	ӨШІР	OFF
+sc.intro	<b>Обучение</b>: пошаговые подсказки и учебные аварии.\n<b>Экзамен</b>: подсказок нет, авария начнётся внезапно, в конце будет оценка.\nОба режима сбрасывают настройки установки и снимают СИЗ.	<b>Оқыту</b>: қадамдық кеңестер мен оқу апаттары.\n<b>Емтихан</b>: кеңестер жоқ, апат кенеттен басталады, соңында баға қойылады.\nЕкі режим да қондырғы баптауларын қалпына келтіріп, ЖҚҚ шешеді.	<b>Training</b>: step-by-step prompts and practice faults.\n<b>Exam</b>: no prompts, a fault starts without warning, and you get a score at the end.\nBoth modes reset the plant settings and remove your PPE.
+sc.running	Сценарий идёт. Задача показана над планшетом.	Сценарий жүріп жатыр. Тапсырма планшеттің үстінде көрсетілген.	A scenario is running. The task is shown above the tablet.
+sc.step	Шаг {0} из {1}.	{0}-қадам ({1} қадамнан).	Step {0} of {1}.
+sc.done	<color=#6FDC8C>Готово</color>	<color=#6FDC8C>Дайын</color>	<color=#6FDC8C>Done</color>
+sc.t.node	Наведите луч на любой узел установки: появится рамка. Нажмите курок, чтобы открыть описание.	Сәулені қондырғының кез келген торабына бағыттаңыз: жақтау пайда болады. Сипаттаманы ашу үшін шүріппені басыңыз.	Point the ray at any part of the plant: a frame appears. Press the trigger to open its description.
+sc.t.ppe	Подойдите к стойке СИЗ. Каску, очки и респиратор возьмите хватом и поднесите к голове и лицу. Перчатки наденьте лучом и курком.	ЖҚҚ сөресіне барыңыз. Каска, көзілдірік пен респираторды қолға алып, басқа және бетке апарыңыз. Қолғапты сәуле мен шүріппе арқылы киіңіз.	Go to the PPE stand. Grab the hard hat, goggles and respirator and bring them to your head and face. Put the gloves on with the ray and trigger.
+sc.t.fluid	Вкладка «Управление»: выберите жидкость «Сода».	«Басқару» қойындысы: «Сода» сұйықтығын таңдаңыз.	Control tab: choose the liquid Soda.
+sc.t.pump	На той же вкладке поставьте насос на уровень 3.	Сол қойындыда сорғыны 3-деңгейге қойыңыз.	On the same tab, set the pump to level 3.
+sc.t.valve	Подойдите к посту ручного управления и вентилем выставьте расход жидкости 0,10 м³/с.	Қолмен басқару бекетіне барып, вентильмен сұйықтық шығынын 0,10 м³/с етіп қойыңыз.	Go to the manual control post and use the valve to set the liquid flow to 0.10 m³/s.
+sc.t.breaker	Включите установку рубильником на посту.	Бекеттегі ажыратқышпен қондырғыны қосыңыз.	Start the plant with the breaker at the post.
+sc.t.smoke	Посмотрите на дым: на выходе из колонны он светлеет. Установка должна работать с очисткой не ниже {0} %.	Түтінге қараңыз: колоннадан шығарда ол ағарады. Қондырғы кемінде {0} % тазартумен жұмыс істеуі керек.	Look at the smoke: it gets lighter at the column outlet. The plant must run with at least {0} % cleaning.
+sc.t.clog.wait	Учебная авария. Следите за манометром: давление растёт. Дождитесь сигнала тревоги.	Оқу апаты. Манометрді бақылаңыз: қысым өсіп жатыр. Дабыл сигналын күтіңіз.	Practice fault. Watch the pressure gauge: the pressure is rising. Wait for the alarm.
+sc.t.clog.lock	Давление выше нормы: это засор. Остановите установку и заблокируйте рубильник: красный замок на посту.	Қысым нормадан жоғары: бұл бітелу. Қондырғыны тоқтатып, ажыратқышты бұғаттаңыз: бекеттегі қызыл құлып.	Pressure is above normal: this is a clog. Stop the plant and lock the breaker with the red lock at the post.
+sc.t.clog.fix	Вкладка «Авария»: нажмите «Прочистить».	«Апат» қойындысы: «Тазарту» түймесін басыңыз.	Faults tab: press Clean.
+sc.t.restart	Снимите блокировку и снова запустите установку.	Бұғаттауды алып, қондырғыны қайта іске қосыңыз.	Remove the lock and start the plant again.
+sc.t.level.wait	Новая авария. Следите за уровнемером: уровень падает. Дождитесь сигнала тревоги.	Жаңа апат. Деңгей өлшегішті бақылаңыз: деңгей төмендеп жатыр. Дабыл сигналын күтіңіз.	A new fault. Watch the level gauge: the level is dropping. Wait for the alarm.
+sc.t.level.fix	Уровень ниже минимума. Вкладка «Авария»: нажмите «Долить».	Деңгей минимумнан төмен. «Апат» қойындысы: «Құю» түймесін басыңыз.	The level is below minimum. Faults tab: press Refill.
+sc.t.level.done	Идёт доливка. Дождитесь нормы; если установка остановлена, запустите её.	Құйылып жатыр. Норманы күтіңіз; қондырғы тоқтап тұрса, іске қосыңыз.	Refilling. Wait until it is normal; if the plant is stopped, start it.
+sc.t.pump.lock	Отказ насоса: струи в колонне пропали, звук насоса стих, давление растёт. Остановите и заблокируйте рубильник.	Сорғы ақауы: колоннадағы ағындар жоғалды, сорғы дыбысы тынды, қысым өсіп жатыр. Тоқтатып, ажыратқышты бұғаттаңыз.	Pump failure: the jets in the column are gone, the pump sound has stopped, and pressure is rising. Stop the plant and lock the breaker.
+sc.t.pump.fix	Вкладка «Авария»: нажмите «Ремонт насоса».	«Апат» қойындысы: «Сорғыны жөндеу» түймесін басыңыз.	Faults tab: press Repair pump.
+sc.t.fan.lock	Отказ дымососа: дым пропал, гул вентилятора стих, давление растёт. Остановите и заблокируйте рубильник.	Түтін сорғыш ақауы: түтін жоғалды, желдеткіш дыбысы тынды, қысым өсіп жатыр. Тоқтатып, ажыратқышты бұғаттаңыз.	Exhaust fan failure: the smoke is gone, the fan hum has stopped, and pressure is rising. Stop the plant and lock the breaker.
+sc.t.fan.fix	Вкладка «Авария»: нажмите «Ремонт дымососа».	«Апат» қойындысы: «Түтін сорғышты жөндеу» түймесін басыңыз.	Faults tab: press Repair fan.
+sc.t.gauge.lock	Манометр показывает рост, но сирены нет, а датчик на вкладке «Авария» в норме. Прибор неисправен. Остановите и заблокируйте рубильник.	Манометр өсуді көрсетеді, бірақ сирена жоқ, ал «Апат» қойындысындағы датчик қалыпты. Аспап ақаулы. Тоқтатып, ажыратқышты бұғаттаңыз.	The gauge shows a rise, but there is no siren and the sensor on the Faults tab is normal. The instrument is faulty. Stop the plant and lock the breaker.
+sc.t.gauge.fix	Вкладка «Авария»: нажмите «Замена манометра».	«Апат» қойындысы: «Манометрді ауыстыру» түймесін басыңыз.	Faults tab: press Replace gauge.
+sc.exam.task	Экзамен: соблюдая порядок безопасности, запустите установку с очисткой не ниже {0} % и следите за приборами.	Емтихан: қауіпсіздік тәртібін сақтап, қондырғыны кемінде {0} % тазартумен іске қосыңыз және аспаптарды бақылаңыз.	Exam: follow the safety procedure, start the plant with at least {0} % cleaning, and watch the instruments.
+sc.training.passed	<b>Обучение пройдено.</b>\nТеперь можно сдать экзамен: подсказок не будет, авария начнётся без предупреждения.	<b>Оқыту аяқталды.</b>\nЕнді емтихан тапсыруға болады: кеңестер болмайды, апат ескертусіз басталады.	<b>Training complete.</b>\nYou can now take the exam: there are no prompts, and a fault starts without warning.
+sc.training.exploded	<color=#FF5A4A><b>Взрыв.</b></color> Давление дошло до разрыва, пока установка работала.\nНачните обучение заново: при тревоге останавливайте установку сразу.	<color=#FF5A4A><b>Жарылыс.</b></color> Қондырғы жұмыс істеп тұрғанда қысым жарылу шегіне жетті.\nОқытуды қайта бастаңыз: дабыл кезінде қондырғыны бірден тоқтатыңыз.	<color=#FF5A4A><b>Explosion.</b></color> Pressure reached the burst point while the plant was running.\nStart the training again: stop the plant as soon as the alarm sounds.
+rep.pass	<color=#6FDC8C><b>Зачёт: {0} из 100</b></color>	<color=#6FDC8C><b>Есептелді: 100-ден {0}</b></color>	<color=#6FDC8C><b>Pass: {0} of 100</b></color>
+rep.fail	<color=#FF5A4A><b>Незачёт: {0} из 100</b></color>	<color=#FF5A4A><b>Есептелмеді: 100-ден {0}</b></color>	<color=#FF5A4A><b>Fail: {0} of 100</b></color>
+rep.explosion	Взрыв: {0}	Жарылыс: {0}	Explosion: {0}
+rep.notFixed	Не устранено вовремя: {0}	Уақытында жойылмады: {0}	Not fixed in time: {0}
+rep.startup	Выход на норму: {0}	Нормаға шығу: {0}	Reached normal operation: {0}
+rep.startup.none	не выполнен	орындалмады	not achieved
+rep.fault	Авария «{0}»: реакция {1}, устранена за {2}	«{0}» апаты: реакция {1}, жойылу уақыты {2}	Fault "{0}": reaction {1}, fixed in {2}
+rep.penalty	{0}: −{1}	{0}: −{1}	{0}: −{1}
+rep.time.s	{0} с	{0} с	{0} s
+rep.time.min	{0} мин {1} с	{0} мин {1} с	{0} min {1} s
+mis.setting	Неверная настройка. {0}	Қате баптау. {0}	Wrong setting. {0}
+mis.slow	Медленная реакция на аварию	Апатқа баяу реакция	Slow reaction to a fault
+mis.late	Поздняя реакция на аварию	Апатқа кеш реакция	Late reaction to a fault
+mis.zone	Вход в опасную зону без СИЗ	Қауіпті аймаққа ЖҚҚ-сыз кіру	Entered the danger zone without PPE
+mis.startNoPpe	Пуск установки без СИЗ	Қондырғыны ЖҚҚ-сыз іске қосу	Started the plant without PPE
+mis.noFault	Устранение несуществующей неисправности	Жоқ ақауды жою	Tried to fix a fault that did not exist
+mis.running	Обслуживание работающей установки	Жұмыс істеп тұрған қондырғыға қызмет көрсету	Servicing a running plant
+mis.noLock	Обслуживание без блокировки рубильника	Ажыратқышты бұғаттамай қызмет көрсету	Servicing without locking the breaker
+mis.noPpe	Обслуживание без СИЗ	ЖҚҚ-сыз қызмет көрсету	Servicing without PPE
