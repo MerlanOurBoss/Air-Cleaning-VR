@@ -3,18 +3,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// VR-планшет управления эмульгатором: пуск/стоп, мощность насоса 1–4, тип жидкости.
+/// VR-планшет управления эмульгатором: пуск/стоп, мощность насоса 1–4, тип жидкости, прозрачный корпус.
 /// Выбранные кнопки подсвечиваются цветом "selected" из стиля кнопок шаблона.
 /// </summary>
 public class EmulsifierTablet : MonoBehaviour
 {
     [SerializeField] private EmulsifierEffects effects;
     [SerializeField] private EmulsifierSettings settings;
+    [SerializeField] private EmulsifierXRay xray;
+    [SerializeField] private EmulsifierGasCleaning cleaning;
 
     [SerializeField] private Button powerButton;
     [SerializeField] private TMP_Text powerLabel;
     [SerializeField] private Button[] pumpButtons;   // уровни 1..4
     [SerializeField] private Button[] fluidButtons;  // Вода, Едкий натрий, Сода
+    [SerializeField] private Button xrayButton;
+    [SerializeField] private TMP_Text xrayLabel;
     [SerializeField] private TMP_Text statusText;
 
     [SerializeField] private Color normalColor = new Color(0.18f, 0.18f, 0.18f);
@@ -28,8 +32,11 @@ public class EmulsifierTablet : MonoBehaviour
         // Префаб планшета не может ссылаться на объекты сцены — берём эмульгатор из сцены, если не задан.
         if (effects == null) effects = FindAnyObjectByType<EmulsifierEffects>();
         if (settings == null) settings = FindAnyObjectByType<EmulsifierSettings>();
+        if (xray == null) xray = FindAnyObjectByType<EmulsifierXRay>();
+        if (cleaning == null) cleaning = FindAnyObjectByType<EmulsifierGasCleaning>();
 
         powerButton.onClick.AddListener(effects.Toggle);
+        xrayButton.onClick.AddListener(xray.Toggle);
 
         for (int i = 0; i < pumpButtons.Length; i++)
         {
@@ -45,6 +52,8 @@ public class EmulsifierTablet : MonoBehaviour
 
         settings.Changed += Refresh;
         effects.StateChanged += Refresh;
+        xray.Changed += Refresh;
+        cleaning.Changed += Refresh;
         Refresh();
     }
 
@@ -52,6 +61,8 @@ public class EmulsifierTablet : MonoBehaviour
     {
         if (settings != null) settings.Changed -= Refresh;
         if (effects != null) effects.StateChanged -= Refresh;
+        if (xray != null) xray.Changed -= Refresh;
+        if (cleaning != null) cleaning.Changed -= Refresh;
     }
 
     private void Refresh()
@@ -67,9 +78,13 @@ public class EmulsifierTablet : MonoBehaviour
         for (int i = 0; i < fluidButtons.Length; i++)
             Tint(fluidButtons[i], i + 1 == fluid ? activeColor : normalColor);
 
+        xrayLabel.text = xray.IsOn ? "Вернуть" : "Сделать прозрачным";
+        Tint(xrayButton, xray.IsOn ? activeColor : normalColor);
+
         statusText.text = (running ? "Работает" : "Остановлен")
                           + "  ·  насос " + settings.PumpLevel
-                          + "  ·  " + FluidNames[fluid - 1];
+                          + "  ·  " + FluidNames[fluid - 1]
+                          + (running ? "  ·  очистка " + cleaning.EfficiencyPercent + " %" : "");
     }
 
     internal static void Tint(Button button, Color color)
