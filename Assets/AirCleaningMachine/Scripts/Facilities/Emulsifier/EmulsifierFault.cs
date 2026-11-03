@@ -255,6 +255,7 @@ public class EmulsifierFault : MonoBehaviour
         Pressure = 0f;
         Level = 1f;
         _refilling = false;
+        _pendingDelay = 0f;
         Restored?.Invoke();
         Changed?.Invoke();
     }

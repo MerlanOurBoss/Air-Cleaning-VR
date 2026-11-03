@@ -21,6 +21,7 @@ public class NodeLabelCard : MonoBehaviour
     [SerializeField] private float hintDelay = 0.5f;
 
     public Material FrameMaterial => frameMaterial;
+    public InspectableNode Pinned => _pinned;
 
     private InspectableNode _pinned;
     private InspectableNode _hovered;

@@ -52,6 +52,13 @@ public class EmulsifierFaultRules : MonoBehaviour
         rulesEnabled = !rulesEnabled;
     }
 
+    public void SetEnabled(bool enabled)
+    {
+        rulesEnabled = enabled;
+        _held = null;
+        _heldTime = 0f;
+    }
+
     private void Update()
     {
         var rule = rulesEnabled ? FindBroken() : null;

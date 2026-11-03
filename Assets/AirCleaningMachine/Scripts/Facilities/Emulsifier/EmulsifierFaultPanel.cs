@@ -11,6 +11,7 @@ public class EmulsifierFaultPanel : MonoBehaviour
     [SerializeField] private EmulsifierFault fault;
     [SerializeField] private EmulsifierEffects effects;
     [SerializeField] private EmulsifierFaultRules rules;
+    [SerializeField] private EmulsifierScenario scenario;
 
     [SerializeField] private Button randomButton;
     [SerializeField] private Button clogButton;
@@ -45,6 +46,7 @@ public class EmulsifierFaultPanel : MonoBehaviour
         if (fault == null) fault = FindAnyObjectByType<EmulsifierFault>();
         if (effects == null) effects = FindAnyObjectByType<EmulsifierEffects>();
         if (rules == null) rules = FindAnyObjectByType<EmulsifierFaultRules>();
+        if (scenario == null) scenario = FindAnyObjectByType<EmulsifierScenario>();
 
         randomButton.onClick.AddListener(() =>
         {
@@ -75,12 +77,17 @@ public class EmulsifierFaultPanel : MonoBehaviour
         });
 
         fault.Changed += Refresh;
+        scenario.Changed += Refresh;
+        scenario.Started += ClearMessage;
         Refresh();
     }
 
     private void OnDestroy()
     {
         if (fault != null) fault.Changed -= Refresh;
+        if (scenario == null) return;
+        scenario.Changed -= Refresh;
+        scenario.Started -= ClearMessage;
     }
 
     private void Update()
@@ -103,8 +110,16 @@ public class EmulsifierFaultPanel : MonoBehaviour
 
     private void Clean()
     {
-        if (fault.Fault != EmulsifierFault.FaultType.Clog) Say("Засора нет.");
-        else if (effects.IsPlaying) Say("Сначала остановите установку, затем прочистите.");
+        if (fault.Fault != EmulsifierFault.FaultType.Clog)
+        {
+            Say("Засора нет.");
+            scenario.AddMistake("Прочистка без засора");
+        }
+        else if (effects.IsPlaying)
+        {
+            Say("Сначала остановите установку, затем прочистите.");
+            scenario.AddMistake("Прочистка на работающей установке");
+        }
         else
         {
             string cause = fault.Cause;
@@ -115,14 +130,25 @@ public class EmulsifierFaultPanel : MonoBehaviour
     private void Refill()
     {
         string cause = fault.Cause;
-        Say(fault.TryRefill() ? "Идёт доливка." + CauseHint(cause, "") : "Утечки нет.");
+        if (fault.TryRefill())
+        {
+            Say("Идёт доливка." + CauseHint(cause, ""));
+            return;
+        }
+
+        Say("Утечки нет.");
+        scenario.AddMistake("Доливка без утечки");
     }
 
-    // После устранения показываем, какую настройку поправить, иначе авария начнётся снова.
-    private static string CauseHint(string cause, string otherwise) =>
-        string.IsNullOrEmpty(cause) ? " " + otherwise : " Исправьте настройку. " + cause + ".";
+    // После устранения показываем, какую настройку поправить, иначе авария начнётся снова. На экзамене не подсказываем.
+    private string CauseHint(string cause, string otherwise) =>
+        string.IsNullOrEmpty(cause) || scenario.Mode == EmulsifierScenario.ScenarioMode.Exam
+            ? " " + otherwise
+            : " Исправьте настройку. " + cause + ".";
 
     private void Say(string text) => _message = text;
+
+    private void ClearMessage() => Say("");
 
     private void Refresh()
     {
@@ -130,9 +156,12 @@ public class EmulsifierFaultPanel : MonoBehaviour
         restoreButton.interactable = fault.HasExploded;
         cleanButton.interactable = !fault.HasExploded;
         refillButton.interactable = !fault.HasExploded;
-        randomButton.interactable = !fault.HasExploded;
-        clogButton.interactable = !fault.HasExploded;
-        lowLevelButton.interactable = !fault.HasExploded;
+        // Во время сценария аварии запускает он сам, а правила не отключаются.
+        bool free = !fault.HasExploded && !scenario.IsRunning;
+        randomButton.interactable = free;
+        clogButton.interactable = free;
+        lowLevelButton.interactable = free;
+        rulesButton.interactable = !scenario.IsRunning;
 
         rulesLabel.text = rules.RulesEnabled ? "Правила: вкл" : "Правила: выкл";
         EmulsifierTablet.Tint(rulesButton, rules.RulesEnabled ? activeColor : normalColor);
